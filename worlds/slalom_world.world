@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="slalom_world">
+    
+    <!-- Configuração da iluminação -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    <!-- Plano como chão -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    
+    <!-- Travessias verticais para o slalom -->
+    <model name="slalom_poles">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="base">
+        
+        <!-- Geração das traves em uma linha -->
+        <visual name="trave_1">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>2.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+          <pose>0 0 1.25 0 0 0</pose>
+        </visual>
+        
+        <visual name="trave_2">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>2.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.98 0.01 0.84 1</ambient>
+            <diffuse>0.98 0.01 0.84 1</diffuse>
+            <!-- 
+            rgb(252, 3, 215)
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Pink</name>
+            </script>
+            -->
+          </material>
+          <pose>0.7 -0.3 1.25 0 0 0</pose>
+        </visual>
+        
+        <visual name="trave_3">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>2.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Blue</name>
+            </script>
+          </material>
+          <pose>1.4 -0.1 1.25 0 0 0</pose>
+        </visual>
+        
+        <visual name="trave_4">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>2.5</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Red</name>
+            </script>
+          </material>
+          <pose>2.1 0.1 1.25 0 0 0</pose>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Base quadrada branca com círculo azul -->
+    <model name="drone_start_base">
+      <static>true</static>
+      <pose>3.0 0.5 0 0 0 0</pose>
+      <link name="base">
+        <visual name="square_base">
+          <geometry>
+            <box>
+              <size>0.8 0.8 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+          <pose>0 0 0.005 0 0 0</pose>
+        </visual>
+        <visual name="circle_marker">
+          <geometry>
+            <cylinder>
+              <radius>0.4</radius>
+              <length>0.01</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+          </material>
+          <pose>0 0 0.01 0 0 0</pose>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

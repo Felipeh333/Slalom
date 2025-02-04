@@ -1,0 +1,7 @@
+<launch>
+    <!-- Inicia o Gazebo com o ambiente do slalom -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find slalom)/worlds/slalom_world.world"/>
+    </include>
+</launch>
+
