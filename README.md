@@ -22,7 +22,7 @@ source devel/setup.bash
 ## Simulação
 Para lançar no gazebo faça:
 ```bash
-roslaunch slalom_env launch_slalom.launch
+roslaunch slalom launch_slalom.launch
 ```
 
 
